@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>E-Commerce</title>
+  </head>
+  <body>
+    <!--     HEADER SECTION -->
+
+    <header id="header">
+      <div class="header__left-side">
+        <i class="fa-sharp fa-solid fa-bars header__nav-icon"></i>
+        <div class="header__logo">
+          <img src="/img/shoe-logo.jpg" alt="shoe logo" />
+        </div>
+      </div>
+
+      <div class="header__nav">
+        <ul>
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div class="header__right-side">
+        <div class="header__basket">
+          <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+          <p class="header__basket-quantity">3</p>
+        </div>
+        <div class="header__user">
+          <i class="fa-solid fa-circle-user"></i>
+        </div>
+      </div>
+    </header>
+    <!--  END OF HEADER SECTION -->
+    <!--     IMAGE SECTION -->
+    <main class="container">
+      <section id="img-container">
+        <div class="img-container__big">
+          <img class="img-container__big--img" src="" alt="main shoe photo" />
+        </div>
+        <div class="img-container__small">
+          <div class="img-container__small--img active">
+            <img
+              class="active"
+              src="/img/shoe-one.jpg"
+              onclick="toSlide(0)"
+              alt="shoe photo no.1"
+            />
+          </div>
+
+          <div class="img-container__small--img">
+            <img src="/img/shoe-two.jpg" onclick="toSlide(1)" alt="shoe photo no.2" />
+          </div>
+
+          <div class="img-container__small--img">
+            <img src="/img/shoe-three.jpg" alt="shoe photo no.3" onclick="toSlide(2)" />
+          </div>
+          <div class="img-container__small--img">
+            <img src="/img/shoe-four.jpg" onclick="toSlide(3)" alt="shoe photo no.4" />
+          </div>
+        </div>
+      </section>
+      <!--    END OF IMAGE SECTION -->
+      <!--     INFORMATION SECTION -->
+      <section id="information">
+        <h1 class="information__heading"><span class="span-font">Sneaker Company</span></h1>
+        <h2 class="information__sub-heading">Fall Limited Edition<br />Sneakers</h2>
+        <p class="information__paragraph">
+          Lorem ipsum dolor sit amet contetur adipisicing elit. Iure non explicabo amet eligendi aut
+          repellendus fuga. Earum mollitia cupiditate.
+        </p>
+
+        <div class="information__prices">
+          <h2 class="information__new-price">$<span class="new-price"></span></h2>
+          <p class="information__discount span-font"><span class="span-font discount">50</span>%</p>
+          <p class="information__old-price">$<span class="old-price">250.00</span></p>
+        </div>
+
+        <div class="information__cart-section">
+          <div class="information__quantity item-quantity">
+            <i class="fa-sharp fa-solid fa-minus span-font"></i>
+            <p class="information__value">0</p>
+            <i class="fa-sharp fa-solid fa-plus span-font"></i>
+          </div>
+          <button class="information__cart-btn btn">
+            <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+            Add to cart
+          </button>
+          <div class="information__items-added information__items-show">
+            <p>Items added to your basket.</p>
+            <i class="fa-sharp fa-solid fa-xmark information__close-msg"></i>
+          </div>
+        </div>
+      </section>
+      <!--   END OF INFORMATION SECTION -->
+      <!--     MOBILE SIDEBAR -->
+      <div class="sidebar">
+        <i class="fa-sharp fa-solid fa-xmark sidebar__close"></i>
+        <ul class="sidebar__nav">
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <!--     END OF MOBILE SIDEBAR -->
+    </main>
+
+    <!--     BASKET COMPONENT -->
+    <div class="basket">
+      <h2 class="basket__heading">Cart</h2>
+      <div class="basket__divider"></div>
+      <p class="basket__empty-message">Your cart is empty.</p>
+      <div class="basket__items">
+        <div class="basket__info">
+          <img class="basket__img" src="" alt="main shoe photo" />
+          <p class="basket__item-name"></p>
+          <p>
+            Autumun Limited Edition...<br /><span class="basket__new-price"></span>&nbsp x
+            &nbsp<span class="basket__item-quantity">0</span>&nbsp<span class="basket__item-total"
+              >0</span
+            >
+          </p>
+          <i class="fa-solid fa-trash trash-btn"></i>
+        </div>
+        <div class="basket__btn"><button class="btn">Checkout</button></div>
+      </div>
+    </div>
+    <!--    END OF BASKET COMPONENT -->
+
+    <!--     MODAL SECTION -->
+
+    <div class="modal__bg">
+      <div class="modal__container">
+        <img class="modal__img" src="" alt="" />
+
+        <i
+          class="fa-sharp fa-solid fa-circle-chevron fa-circle-chevron-left"
+          onclick="changeSlide(-1)"
+        ></i>
+        <i
+          class="fa-sharp fa-solid fa-circle-chevron fa-circle-chevron-right"
+          onclick="changeSlide(1)"
+        ></i>
+        <i class="fa-sharp fa-solid fa-xmark modal__close"></i>
+
+        <div class="img-container__small">
+          <div class="img-container__small--img">
+            <img class="active" src="" onclick="toSlide(0)" alt="shoe no.1" />
+          </div>
+
+          <div class="img-container__small--img">
+            <img src="" onclick="toSlide(1)" alt="shoe no.2" />
+          </div>
+
+          <div class="img-container__small--img">
+            <img src="" onclick="toSlide(2)" alt="shoe no.3" />
+          </div>
+          <div class="img-container__small--img">
+            <img src="" onclick="toSlide(3)" alt="shoe no.4" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--     JAVASCRIPT -->
+    <script src="https://kit.fontawesome.com/07c7b4ecae.js" crossorigin="anonymous"></script>
+    <script src="/js/script.js"></script>
+    <!--     END OF JAVASCRIPT -->
+  </body>
+</html>
