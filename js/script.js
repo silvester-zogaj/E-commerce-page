@@ -45,6 +45,7 @@ const nextBtn = document.querySelector(".fa-circle-chevron-right");
 let count = 0; // quantity of items to add/remove from basket
 let countTotal = 0; // adds the count onto itself to equal a new total value. Represents adding multiple items over and over to the basket without resetting its value.
 let isClicked = true; // Toggle function variable
+let isModalOpen; // Check if modal is open or not
 
 const newDiscount = discount.innerHTML / 100;
 newPrice.innerHTML = oldPrice.innerHTML - newDiscount * oldPrice.innerHTML + ".00";
@@ -202,14 +203,17 @@ function showModal(n) {
 
   // show modal image of the the photo of the index number we are curretly on.
   modalImg.src = imagesSmall[imageIndex].src;
+
+  isModalOpen = true;
 }
 
 // ========= SWITCH IMAGES WITH ARROW KEYS =========
 
 document.addEventListener("keyup", function (e) {
-  if (e.key === "ArrowLeft") {
+  if (e.key === "ArrowLeft" && isModalOpen === true) {
     changeSlide(-1);
-  } else if (e.key === "ArrowRight") {
+  }
+  if (e.key === "ArrowRight" && isModalOpen === true) {
     changeSlide(1);
   }
 });
@@ -220,6 +224,7 @@ for (let i = 0; i < imagesContainer.length; i++) {
     modalBg.style.display = "none";
     imagesContainer[i].classList.remove("active");
     imagesModal[i].classList.remove("active");
+    isModalOpen = false;
   });
 
   window.addEventListener("keydown", function (e) {
@@ -227,6 +232,7 @@ for (let i = 0; i < imagesContainer.length; i++) {
       modalBg.style.display = "none";
       imagesContainer[i].classList.remove("active");
       imagesModal[i].classList.remove("active");
+      isModalOpen = false;
     }
   });
 }
