@@ -186,7 +186,7 @@ function changeSlide(n) {
     imagesModal[i].classList.remove("active");
   }
   imagesModal[imageIndex].classList.add("active");
-  imagesContainer[imadeIndex].classList.add("active");
+  imagesContainer[imageIndex].classList.add("active");
 }
 
 // if the index goes beyond the images we have, reset it back to the first.
@@ -206,27 +206,33 @@ function showModal(n) {
 
 // ========= SWITCH IMAGES WITH ARROW KEYS =========
 
-document.addEventListener("keyup", function (e) {
-  if (e.key === "ArrowLeft") {
-    changeSlide(-1);
-  }
-  if (e.key === "ArrowRight") {
-    changeSlide(1);
-  }
-});
+// document.addEventListener("keyup", function (e) {
+//   if (e.key === "ArrowLeft") {
+//     changeSlide(-1);
+//   }
+//   if (e.key === "ArrowRight") {
+//     changeSlide(1);
+//   }
+// });
 
 // ========= CLOSE MODAL =========
 for (let i = 0; i < imagesContainer.length; i++) {
   modalClose.addEventListener("click", function () {
     modalBg.style.display = "none";
-    imagesContainer[i].classList.remove("active");
+    for (let k = 0; k < imagesContainer.length; k++) {
+      imagesContainer[k].classList.remove("active");
+    }
+    imagesContainer[0].classList.add("active");
     imagesModal[i].classList.remove("active");
   });
 
   window.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
       modalBg.style.display = "none";
-      imagesContainer[i].classList.remove("active");
+      for (let k = 0; k < imagesContainer.length; k++) {
+        imagesContainer[k].classList.remove("active");
+      }
+      imagesContainer[0].classList.add("active");
       imagesModal[i].classList.remove("active");
       sidebar.style.display = "none";
     }
@@ -259,7 +265,7 @@ for (let i = 0; i < imagesModal.length; i++) {
 
 // ========== SCROLL FUNCTIONALITY =============
 
-// message disappears when scrolled after a certain point.
+// message disappears when scrolled to a certain point.
 window.addEventListener("scroll", myScrollFunction);
 
 function myScrollFunction() {
