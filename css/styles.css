@@ -83,13 +83,13 @@ h2 {
   display: none;
 }
 
-.header__nav-icon {
+.header__hamburger {
   font-size: 3.5rem;
   margin-right: 1rem;
   color: var(--color-secondary-dark);
 }
 
-.header__nav-icon,
+.header__hamburger,
 .header__basket,
 .header__user {
   cursor: pointer;
@@ -511,7 +511,7 @@ h2 {
     width: 100%;
   }
 
-  .header__nav-icon {
+  .header__hamburger {
     visibility: hidden;
     position: absolute;
     left: -9999px;
