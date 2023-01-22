@@ -1,4 +1,4 @@
-E-commerce page focused on the functionality of different little areas of the website such as the basket, the sidebar (mobile view), the quantity, images and the modal.
+An e-commerce page focused on the functionality of different little areas of the website such as the basket, the sidebar (mobile view), the quantity, images and the modal.
 
 Quantity can be changed and, then you can add the amount to the basket. You can then view the basket and see the amount of the items added, or click the trash button to remove all items in your basket.
 
